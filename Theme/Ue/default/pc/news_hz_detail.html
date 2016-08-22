@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="{$re_path}/css/global.css"/>
+<link rel="stylesheet" type="text/css" href="{$re_path}/css/main2.css"/>
+<script type="text/javascript" src="{$re_path}/js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="{$re_path}/js/index.js"></script>
+<title>{:getconfig(cfg_webname)}</title>
+</head>
+<body>
+<body>
+<include file="./header"/>
+<div class="banner banner2">
+	<volist name=":getcatlist(new_banner,img)" id='vo'>
+	    <img src="{$vo.link}" width="1601" height="305"/>
+	</volist>
+</div>
+<include file="./menu"/>
+<div class="main">
+	<div class="left">
+		<h2>关于我们<span>aBOUT US</span></h2>
+		<div class="leftNav">
+			<ul>
+				<include file="./second_menu"/>
+			</ul>
+		</div>
+	</div>
+	<div class="right">
+		<div class="current">
+			<span class="nin">当前位置：</span>{:location()}
+		</div>
+		<div class="News_xq">
+			<div class="tittle">
+				<h2>{$detail.title}</h2>
+				<span>时间：{$detail.updatetime||date='y-m-d',###}</span><span>字号：<a href="javascript:doZoom(16)">大</a><a href="javascript:doZoom(14)">中</a><a href="javascript:doZoom(12)">小</a></span>
+			</div>
+			<div class="new_wz" id="Zoom">
+				{$detail.content}
+			</div>
+			<div class="fenxiang">
+				<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style">
+					<a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_tqq"></a><a class="jiathis_button_weixin"></a><a class="jiathis_button_renren"></a><a href="#" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a><a class="jiathis_counter_style"></a>
+				</div>
+				<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+				<!-- JiaThis Button END -->
+			</div>
+			<div class="fanpian">
+				<ul>
+					<notempty name="prev">
+						<li>上一篇：<a href='{$prev.url}'>{$prev.title}</a> ...</a></li>
+						<else/>
+						<li>上一篇：没有了 ...</li>
+					</notempty>
+
+					<notempty name="next">
+						<li>下一篇：<a href='{$next.url}'>{$next.title}</a> ...</a></li>
+						<else/>
+						<li>下一篇：没有了 ...</li>
+					</notempty>
+					<a href="javascript:window.close()" class="close">【关闭】</a>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript"> 
+function doZoom(size) 
+{ 
+var zoom=document.all?document.all['Zoom']:document.getElementById('Zoom'); 
+zoom.style.fontSize=size+'px'; 
+} 
+</script>
+<include file="./footer"/>
+</body>
+</html>

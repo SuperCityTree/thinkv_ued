@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+<title>控制中心_{$cfg_webname}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/admin.css">
+
+<script src="http://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <include file="Public:header"/>
+
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h3>内容管理</h3>
+        <p>您可以在本栏目内自由的管理您的网站内容</p>
+      </div>
+    </div>
+
+
+
+    <div class="container bs-docs-container">
+
+
+
+              <div class="row">
+
+                        <div class="col-md-2 nav_left" role="complementary">
+                                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+                                  <ul class="nav bs-docs-sidenav">
+                                      <li>
+                                  
+                                        <ul class="nav">
+                                         <li ><a href="{:U('Content/index')}" >首页管理</a></li>
+                                          <volist name="category_list" id="vo">
+                                                   <li  {$vo.thisone}><a href="__APP__/Home/Content/{$vo.module}/id/{$vo.catid}">{$vo.catname}</a></li>
+                                           </volist>
+                                        </ul>
+                                      </li>
+                                  </ul>
+                                </nav>
+                        </div>
+
+                         <div class="col-md-10" role="main">
+                            <h4>联系我们的页面设置组<span class="pull-right litbianji">编辑</span></h4>
+                         <div class="list-group">
+                         <volist name="setgroup" id="vo">
+                         
+                              <li  class="list-group-item">
+                              <a href="__URL__/catset/gid/{$vo.id}" class="aleft"> <h4 class="list-group-item-heading">{$vo.name}</h4>
+                               <p class="list-group-item-text">{$vo.des}</p></a>
+                                <a href="__URL__/catset/gid/{$vo.id}"><span  class="pull-right  glyphicon glyphicon-menu-right btn"></span>
+                               <span  class="pull-right   btn"><span class="badge">{$vo.count}</span></span></a>
+                                <span class="pull-right  showbtn" ><a class="btn btn-warning xiugai mr20" data='{$vo.id}' data-name='{$vo.name}' data-des='{$vo.des}'>修改</a><a link="__URL__/deleteadgroup/id/{$vo.id}" class="btn btn-danger dodelete">删除</a></span>
+                                
+                                <div class="clearfix"></div>
+                              </li>
+
+                            </volist>
+                          
+                          </div>
+                     
+                         <div class="row">
+                                <volist name="list_hr" id="hr">
+                                    <div class="col-xs-6 col-lg-6 news_outer">
+                                      <h3>{$hr.zhiw}</h3>
+                                      <p> <a class="dodelete pull-left" link='__APP__/Home/Content/zp_delete/id/{$hr.id}' role="button"><span class='glyphicon glyphicon-trash'></span></a><a class="btn btn-default pull-right " href="__APP__/Home/Content/edit_zp/id/{$hr.id}" role="button">编辑</a></p>
+                                    </div><!--/.col-xs-6.col-lg-4-->  
+                                   </volist>
+                                       {$page}
+                          </div>
+                           <p> <a class="btn btn-success pull-right  mr20" href="__APP__/Home/Content/add_zp/id/{$catid}" role="button">发布新文章</a>
+                            <a class="btn btn-warning pull-right addad mr20" type="button" >新增栏目设置组</a></p>
+
+                            
+                        
+
+                           
+                    </div>
+            
+
+    
+
+        </div>
+        
+        
+        
+      </div>
+    </div>
+
+
+<!-- 添加广告组 -->
+<div class="modal fade" id="addadModal" tabindex="-2" role="dialog" aria-labelledby="addModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">添加栏目设置</h4>
+      </div>
+      <div class="modal-body">
+        <form id="addad">
+  
+          
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">标题:</label>
+            <input type="text" class="form-control" id="add-name" name='name' placeholder="请输入栏目设置名称">
+          </div>
+           <div class="form-group">
+            <label for="message-text" class="control-label">描述:</label>
+            <input type="text" class="form-control" id="add-des" name='des' placeholder="请输入栏目设置描述">
+          </div>
+            <div class="form-group">
+            <label for="message-text" class="control-label">所属栏目:</label>
+               <select  name="catid" class="form-control"> 
+                      <option value="0"  >首页</option>
+                          <volist name="category_list" id="vo">
+                              <if condition="$vo.catid eq $catid">   
+                                    <option value="{$vo.catid}"  selected="selected">{$vo.catname}</option>
+                                    <else />
+                                    <option value="{$vo.catid}" >{$vo.catname}</option>
+                                    </if>
+                            </volist>
+                  </select>
+          </div>
+
+       
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary toaddad">立即添加</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 修改栏目组配置 -->
+<div class="modal fade" id="sysModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">修改栏目组设置信息</h4>
+      </div>
+      <div class="modal-body">
+        
+         
+          
+          <form id="syscat">
+           <input type="hidden" name='id' id='adid' value=''>
+          <div class="form-group">
+            <label for="message-text" class="control-label">标题:</label>
+             <input type="text" name='name' class="form-control" id="adname" placeholder="" value=''>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">描述:<span id='duiyingzhi'></span></label>
+             <input type="text" name='des' class="form-control" id="addes" placeholder="" value=''>
+          </div>
+            <div class="form-group">
+            <label for="message-text" class="control-label">所属栏目:</label>
+               <select  name="catid" class="form-control"> 
+                      <option value="0"  >首页</option>
+                          <volist name="category_list" id="vo">
+                              <if condition="$vo.catid eq $catid">   
+                                    <option value="{$vo.catid}"  selected="selected">{$vo.catname}</option>
+                                    <else />
+                                    <option value="{$vo.catid}" >{$vo.catname}</option>
+                                    </if>
+                            </volist>
+                  </select>
+          </div>
+        
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary tochangad">立即修改</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  $('.dodelete').click(function(){
+       var result = confirm('是否确定删除！');  
+      if(result){  
+
+          window.location.href=$(this).attr('link'); 
+      }else{  
+          return false;  
+      }  
+ })
+
+</script>
+
+
+<script type="text/javascript">
+  //添加系统配置弹出
+  $('.addad').click(function(){
+
+    $('#addadModal').modal('show');
+    return false;
+    
+  })
+
+//添加系统配置
+$('.toaddad').click(function() {
+
+    var forname=$('#add-name').val();
+    var forvarname=$('#add-des').val();
+   
+    
+    if(forname==''){
+      alert("必须添加标题");
+      return false;
+    }
+     if(forvarname==''){
+      alert("必须添加描述");
+      return false;
+    }
+     
+else{
+
+  $.ajax({
+                cache: true,
+                type: "POST",
+                url:"{:U('content/add_setGroup/')}",
+                data:$('#addad').serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("添加失败");
+                },
+                success: function(data) {
+                  if(data=='1'){
+                    window.location.reload();
+                  }
+                  else{
+                     alert("添加失败");
+                  }
+                }
+            });
+  }
+});
+
+
+
+//编辑系统项目
+$('.xiugai').click(function(){
+
+  $('#sysModal').modal('show');
+
+  $('#adid').val($(this).attr('data'));
+    $('#adname').val($(this).attr('data-name'));
+  $('#addes').val($(this).attr('data-des'));
+
+    return false;
+
+})
+
+$('.tochangad').click(function() {
+
+    var forname=$('#adid').val();
+   
+    
+    if(forname==''){
+      alert("暂时无法修改");
+      return false;
+    }
+     
+     
+else{
+
+  $.ajax({
+                cache: true,
+                type: "POST",
+                url:"{:U('content/edit_setGroup/')}",
+                data:$('#syscat').serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("修改失败");
+                },
+                success: function(data) {
+                    if(data=='1'){
+                    window.location.reload();
+                  }
+                  else{
+                     alert('修改失败');
+                  }
+                }
+            });
+  }
+});
+
+//点击编辑变成可编辑状态
+$('.litbianji').click(function(){
+  $('.showbtn').show();
+})
+
+//删除操作点击确认
+$('.dodelete').click(function(){
+       var result = confirm('是否确定删除！删除组后将同时清除组内的所有设置');  
+      if(result){  
+
+          window.location.href=$(this).attr('link'); 
+      }else{  
+          return false;  
+      }  
+ })
+
+</script>
+<script>
+$('.clearbtn').click(function(){
+if(confirm("确认要清除缓存？")){
+var $type=$('#type').val();
+var $mess=$('#mess');
+$.post('__URL__/clear',{type:$type},function(data){
+alert("缓存清理成功");
+});
+}else{
+return false;
+}
+});
+</script>
+
+   <include file="Public:footer"/>
+</body>
+
+</html>

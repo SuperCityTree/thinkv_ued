@@ -1,0 +1,26 @@
+ <div class="row " style="margin-bottom: 20px;">
+ <notempty name="product_list">
+                <volist name="product_list" id="vo">
+                             <div class="col-xs-4 col-lg-4 media_outer">
+                                      <h3>{$vo.title}</h3>
+                                      <div class="media_list">
+                                     <notempty name="vo.thumb">
+                                         <img src="{$vo.thumb}">
+                                          <else / >
+                                           <img src="__PUBLIC__/admin/img/nopic.png">
+                                         </notempty>
+                                      </div>
+                                      <p> <a class="dodelete pull-left" link='__APP__/Home/Content/product_delete/id/{$vo.id}' role="button"><span class='glyphicon glyphicon-trash'></span></a><a class="btn btn-default pull-right " href="__APP__/Home/Content/edit_product/cid/{$vo.catid}/id/{$vo.id}" role="button">编辑</a><a class="btn btn-success pull-right  mr20" href="__APP__/Ue/Show/index/cid/{$vo.catid}/aid/{$vo.id}" role="button" target="new">前台预览</a></p>
+                                </div>
+                                  </volist>
+  <else /> 
+  <div class="alert alert-warning alert-dismissible subcat" role="alert" style="margin-top: 30px;">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    暂无任何信息
+                                                  </div>
+                                              </notempty>
+                                       {$page}
+
+  <p style="margin-top: 30px;"> <a class="btn btn-success pull-right  mr20" href="__APP__/Home/Content/add_product/cid/{$catid}" role="button">发布新产品</a></p>
+
+  </div>

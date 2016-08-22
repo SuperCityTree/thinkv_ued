@@ -1,0 +1,7 @@
+<volist name=":getcategory('same',$catinfo[catid])" id="vo">
+	<if condition='$vo[catid] eq $catinfo[catid]'>
+	 	<li><a href="{$vo.url}" class="hover">{$vo.catname}</a></li>
+	 	<else/>
+	 	<li ><a href="{$vo.url}">{$vo.catname}</a></li>
+	</if>
+</volist>

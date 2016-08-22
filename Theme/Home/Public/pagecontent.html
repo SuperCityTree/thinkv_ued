@@ -1,0 +1,175 @@
+  <notempty name='page'>
+                                      <div class="row pd20">
+
+                                          <volist name="page" id="vo">
+
+                                              <div class="bs-callout-info">
+                                        <h5>内容区域{$i}
+                                                <if condition="getconfig('cfg_mode')=='Y'">
+                                                <span class="glyphicon glyphicon-remove pull-right deletepage" aria-hidden="true" link='__APP__/Home/Content/delete_page/cid/{$vo.catid}/id/{$vo.id}'></span>
+                                                </if>
+
+                                        </h5>
+                                                            <form action="{:U('Content/edit_page')}" method="POST">
+                                                                <div class="wenjian b ">
+
+                                                                <div class="row">
+                                                                <div class="col-md-12">
+
+                                                                <div class="form-group">
+                                                                <input type="text" class="form-control" name='title' placeholder="请输入标题" required="required" value="{$vo.title}">
+                                                                </div>
+                                                                </div>
+                                                          
+                                                                </div>
+                                                                </div>
+
+                                                               
+
+
+                                                          
+                                                                <div class="wenjian b">
+                                                        
+                                                                <textarea class="weditor" placeholder="Balabala" autofocus name='content'  required="required" style="height:800px;max-height:2500px;">{$vo.content}</textarea>
+                                                             
+                                                                </div>
+
+                                                                 <div class="wenjian b" style="margin-bottom:50px">
+
+                                                            <if condition="$vo.thumb neq ''">
+                                                                <span class="shouqimore glyphicon glyphicon-menu-up">收起更多设置</span>
+                                                                        
+                                                                        <div class="row moresetpage">
+                                                                        <else/>
+                                                                        <span class="shouqimore glyphicon glyphicon-menu-down">弹开更多设置</span>
+                                                                        
+                                                                        <div class="row moresetpage" style="display:none">
+                                                                        </if>
+
+                                                                        <div class="col-md-4">
+                                                                          <div class="form-group">
+                                                                            <label for="exampleInputEmail1">单页封面</label>
+                                                                             
+
+                                                                                <if condition="$vo.thumb neq ''">
+                                                                      <img src="{$vo.thumb}" class="thumbnail litpic">
+                                                                      <else />
+                                                                      <img src="__PUBLIC__/admin/img/tub.png" class="thumbnail litpic">
+                                                                       </if>
+                                                                       </p>
+
+                                                                              <p><a href="#" class="btn btn-success" data-toggle="modal" data-target="#gridSystemModal">上传单页封面</a></p>
+                                                                              <input type="hidden" value="{$vo.thumb}" name='thumb' id='thumb'>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="col-md-8">
+                                                                        <div class="form-group">
+                                                                          <label for="exampleInputEmail1">单页关键字</label>
+                                                                          <input type="text" class="form-control" name='keywords' id="exampleInputEmail1"  value='{$vo.keywords}' placeholder="请输入文章关键字">
+                                                                        </div>
+                                                                          <div class="form-group">
+                                                                          <label for="exampleInputEmail1">单页描述</label>
+                                                                          <textarea class="form-control" rows="3" name='description'  value='{$vo.description}'  placeholder="请输入文章描述信息(若不填写，将自动抓取文章信息)">{$vo.description}</textarea>
+                                                                        </div>
+                                                                      </div>
+                                                                      </div>
+                                                                            
+
+                                                                              
+                                                                            </div>
+                                                      
+                                                                <input type="hidden" value="1" name='dopost'></input>
+                                                                  <input type="hidden" value="{$vo.catid}" name='catid'></input>
+                                                                 <input type="hidden" value="{$vo.id}" name='id'></input>
+
+                                                                <div class="wenjian b">
+                                                                <button type="submit" class="btn btn-warning btn-lg btn-block">提交</button>
+
+                                                                </div>
+                                                          </div>  
+                                                    </form>
+                                                   </volist>
+                                                   <div class="clearfix"></div>
+
+                                                    <if condition="getconfig('cfg_mode')=='Y'">
+                                                        <!-- 判断是否启用了开发模式 -->
+                                                              <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                <h4>还需要添加一个？</h4>
+                                                                <p>如果您觉得不够用，可以点击再次添加一个</p>
+                                                                <p>
+                                                                 
+                                                                  <a href='__APP__/Home/Content/add_page/cid/{$catid}' class="btn btn-default">再来一个</a>
+                                                                </p>
+                                                              </div>
+                                                          </if>
+
+                                      </div>
+
+                                      <script type="text/javascript" src="__PUBLIC__/admin/weditor/js/wangEditor.min.js"></script>
+
+                                      <script type="text/javascript">
+
+                                                $('.weditor').each(function(){
+                                                   var textarea = $(this);
+                                                  // 生成编辑器
+                                                  var editor = new wangEditor(textarea);
+                                                   // 上传图片（举例）
+                                                  editor.config.uploadImgUrl = '{:U('Content/uploadimgfromeditor_w')}';
+
+                                                  // 配置自定义参数（举例）
+                                                  editor.config.uploadParams = {
+                                                      token: 'abcdefg',
+                                                      user: 'wangfupeng1988'
+                                                  };
+
+                                                  // 设置 headers（举例）
+                                                  editor.config.uploadHeaders = {
+                                                      'Accept' : 'text/x-json'
+                                                  };
+
+                                                  editor.create();
+                                                })
+
+                                                
+                                           $('.deletepage').click(function(){
+                                                       var result = confirm('是否确定删除！');  
+                                                            if(result){  
+                                                                window.location.href=$(this).attr('link'); 
+                                                            }else{  
+                                                                return false;  
+                                                            }  
+                                           })
+                                           $('.shouqimore').click(function(){
+                                            if($(this).hasClass('glyphicon-menu-up')){
+                                              $(this).removeClass('glyphicon-menu-up').addClass('glyphicon-menu-down').html('弹开更多设置').next('.row').slideUp();
+                                                  return false;
+                                                }
+                                                else{
+                                                    $(this).removeClass('glyphicon-menu-down').addClass('glyphicon-menu-up').html('收起更多设置').next('.row').slideDown();
+                                                  return false;
+                                                }
+                                           })
+                                                 
+                                              </script>
+
+                                   <else/>
+
+                                    <if condition="getconfig('cfg_mode')=='Y'">
+                                    <!-- 判断是否启用了开发模式 -->
+                                          <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4>该栏目暂时没单页信息</h4>
+                                            <p>如果您在本栏目拥有大量文字，可以在本栏目添加一个单页</p>
+                                            <p>
+                                             
+                                              <a href='__APP__/Home/Content/add_page/cid/{$catid}' class="btn btn-default">添加一个</a>
+                                            </p>
+                                          </div>
+                                      </if>
+
+                                   </notempty>
+
+
+
+

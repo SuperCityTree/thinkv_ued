@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="{$re_path}/css/global.css"/>
+<link rel="stylesheet" type="text/css" href="{$re_path}/css/main2.css"/>
+
+<script type="text/javascript" src="{$re_path}/js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="{$re_path}/js/index.js"></script>
+<title>{:getconfig(cfg_webname)}</title>
+</head>
+
+
+<body>
+
+<include file="./header"/>
+
+<div class="banner banner2">
+    <volist name=":getcatlist(respon_banner,img)" id='vo'>
+      <img src="{$vo.link}" width="1601" height="305"/>s
+    </volist>
+</div>
+</div>
+
+<include file="./menu"/>
+
+
+
+<div class="main">
+  <div class="left">
+     <h2>社会责任<span>SOCIaL RESPONSIBILITY</span></h2>
+    <div class="leftNav">
+      <ul>
+        <include file="./second_menu"/>
+      </ul>
+    </div>
+  </div>
+  <div class="right">
+    <div class="current"><span class="nin">当前位置：</span>{:location()}</div>
+    <div class="shehuiMain2">
+      <ul style="padding-bottom: 30px;">
+
+	  <!-- <li>
+          <dl>
+            <dt><a href="#" target="_blank"><img src="images/1-1311131332270-L.jpg" width="175" height="129" /></a></dt>
+            <dd>
+              <h2><a href="#" target="_blank">庆祝“五一”</a></h2>
+              <span>2013-04-26</span>
+              <p>为了迎接“五一”国际劳动节，加强企业文化建设，增强企业凝聚力，丰富公司员工的业余生活，公司于今年4月25日在工会组织下举办了一场丰富多彩的运动会比赛。公司领导执...</p>
+              <a href="#" target="_blank" class="more"><img src="images/gengguo_03.jpg" width="53" height="17"/></a> </dd>
+          </dl>
+        </li> -->
+
+        <volist name="list_data" id="vo">
+            <li>
+              <dl>
+                <dt><a href="{$vo.url}" target="_blank"><img src="{$vo.thumb}" width="175" height="129" /></a></dt>
+                <dd>
+                  <h2><a href="{$vo.url}" target="_blank">{$vo.title}</a></h2>
+                  <span>{$vo.updatetime||date='y-m-d',###}</span>
+                  <p>{$vo.description}</p>
+                  <a href="{$vo.url}" target="_blank" class="more"><img src="{$re_path}/images/gengguo_03.jpg" width="53" height="17"/></a> </dd>
+              </dl>
+            </li>
+        </volist>
+
+      </ul>
+       <div class="page">
+	       {$page}
+	  </div>
+    </div>
+  </div>
+</div>
+
+<include file="./footer"/>
+
+</body>
+</html>
