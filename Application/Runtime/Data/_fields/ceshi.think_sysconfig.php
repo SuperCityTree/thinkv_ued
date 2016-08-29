@@ -1,1 +1,0 @@
-a:8:{i:0;s:3:"aid";i:1;s:7:"varname";i:2;s:4:"info";i:3;s:7:"groupid";i:4;s:4:"type";i:5;s:5:"value";s:3:"_pk";s:7:"varname";s:5:"_type";a:6:{s:3:"aid";s:15:"int(8) unsigned";s:7:"varname";s:11:"varchar(20)";s:4:"info";s:12:"varchar(100)";s:7:"groupid";s:11:"smallint(6)";s:4:"type";s:11:"varchar(10)";s:5:"value";s:4:"text";}}
