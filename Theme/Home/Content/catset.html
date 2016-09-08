@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+<title>控制中心_{$cfg_webname}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/admin.css">
+</head>
+<body>
+
+    <include file="Public:header"/>
+
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h3>栏目设置管理</h3>
+        <p>可以定义每个栏目的自定义设置项目</p>
+      </div>
+    </div>
+    <div class="container bs-docs-container">
+              <div class="row">
+                        <div class="col-md-2 nav_left" role="complementary">
+                             <!-- 引用内容管理通用左侧类目 -->
+                                <include file="Public:content_nav"/>
+                        </div>
+
+                         <div class="col-md-10" role="main">
+                         <div class="row pd20">
+
+
+                        
+
+                           <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  "{$group.name}"设置组
+                </a>
+                <span class="pull-right label label-primary">栏目组id:{$group.id}</span>
+              </h4>
+            </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+                  
+
+                    <volist name="catset_list" id="vo">
+                        <li class="list-group-item catset"><i  class='tips' data-toggle="tooltip" data-placement="right" title="调用:{$vo.value}">{$vo.name}</i><a href="" date='{$vo.id}'  class="tn btn-danger pull-right btn-xs pull-right ds">删除</a>
+                        <a href="__URL__/editset/gid/{$gid}/id/{$vo.id}"  date='{$vo.aid}' date-key='{$vo.info}'  date-value='{$vo.value}'   class="tn btn-info pull-right btn-xs pull-right editsys mr20">编辑</a><span class='pull-right mr20'>
+                        <if condition="$vo.type eq img"> 
+                       <img src="{$vo.img}" class="sss img-rounded">
+                        <else />
+                         {$vo.text|msubstr=0,30}
+                        </if>
+                        </span</li>
+                    </volist>
+
+
+
+                </ul>
+                <div class="clearfix"></div>
+    </div>
+  </div>
+                          <p>     
+                    <a href="__URL__/addset/gid/{$gid}/type/text" class="btn btn-warning pull-right" type="button" >新增文字类型</a><a  href="__URL__/addset/gid/{$gid}/type/img" class="btn btn-warning pull-right mr20" type="button" >新增图片类型</a>
+                </p>
+
+
+                          
+                          </div>
+
+                    </div>
+            
+        </div>
+
+      </div>
+    </div>
+
+
+<!-- 添加广告组 -->
+<div class="modal fade" id="addadModal" tabindex="-2" role="dialog" aria-labelledby="addModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">添加栏目设置</h4>
+      </div>
+      <div class="modal-body">
+        <form id="addad">
+  
+          
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">标题:</label>
+            <input type="text" class="form-control" id="add-name" name='name' placeholder="请输入栏目设置名称">
+          </div>
+           <div class="form-group">
+            <label for="message-text" class="control-label">描述:</label>
+            <input type="text" class="form-control" id="add-des" name='des' placeholder="请输入栏目设置描述">
+          </div>
+            <div class="form-group">
+            <label for="message-text" class="control-label">所属栏目:</label>
+               <select  name="catid" class="form-control"> 
+                      <option value="0"  >首页</option>
+                          <volist name="category_list" id="vo">
+                              <if condition="$vo.catid eq $catid">   
+                                    <option value="{$vo.catid}"  selected="selected">{$vo.catname}</option>
+                                    <else />
+                                    <option value="{$vo.catid}" >{$vo.catname}</option>
+                                    </if>
+                            </volist>
+                  </select>
+          </div>
+
+       
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary toaddad">立即添加</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<include file="Public:footer"/>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  //添加系统配置弹出
+  $('.addad').click(function(){
+
+    $('#addadModal').modal('show');
+    return false;
+    
+  })
+
+//添加系统配置
+$('.toaddad').click(function() {
+
+    var forname=$('#add-name').val();
+    var forvarname=$('#add-des').val();
+   
+    
+    if(forname==''){
+      alert("必须添加标题");
+      return false;
+    }
+     if(forvarname==''){
+      alert("必须添加描述");
+      return false;
+    }
+     
+else{
+
+  $.ajax({
+                cache: true,
+                type: "POST",
+                url:"{:U('content/add_setGroup/')}",
+                data:$('#addad').serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("添加失败");
+                },
+                success: function(data) {
+                  if(data=='1'){
+                    window.location.reload();
+                  }
+                  else{
+                     alert("添加失败");
+                  }
+                }
+            });
+  }
+});
+
+
+
+//编辑系统项目
+$('.xiugai').click(function(){
+
+  $('#sysModal').modal('show');
+
+  $('#adid').val($(this).attr('data'));
+    $('#adname').val($(this).attr('data-name'));
+  $('#addes').val($(this).attr('data-des'));
+
+    return false;
+
+})
+
+$('.tochangad').click(function() {
+
+    var forname=$('#adid').val();
+   
+    
+    if(forname==''){
+      alert("暂时无法修改");
+      return false;
+    }
+     
+     
+else{
+
+  $.ajax({
+                cache: true,
+                type: "POST",
+                url:"{:U('tools/edit_adGroup/')}",
+                data:$('#syscat').serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("修改失败");
+                },
+                success: function(data) {
+                    if(data=='1'){
+                    window.location.reload();
+                  }
+                  else{
+                     alert("添加失败");
+                  }
+                }
+            });
+  }
+});
+
+
+//删除系统配置项目
+$('.ds').click(function(){
+var aid=$(this).attr('date')
+   var result = confirm('是否确定删除！');  
+      if(result){  
+          
+  $.ajax({
+                cache: true,
+                type: "POST",
+                url:"__APP__/Home/content/delete_setcat/id/"+aid,
+                async: false,
+                error: function(request) {
+                    alert("删除失败");
+                      return false;  
+                },
+                success: function(data) {
+                  // window.location.reload();
+                }
+            }); 
+
+      }else{  
+          return false;  
+      }  
+
+
+})
+
+$('.tips').tooltip()
+
+</script>
+
+</body>
+
+</html>

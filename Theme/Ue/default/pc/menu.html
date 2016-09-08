@@ -1,0 +1,18 @@
+<div class="nav">
+	<ul>	
+		<li><a href="{:getconfig('cfg_indexurl')}">首 页</a></li>
+		
+		<volist name=":getcategory('top')" id="vo" key='k'  >
+			<li <notempty name='vo.current'>class="hover"</notempty>><a href="{$vo.url}">{$vo.catname}</a>
+			
+			<div class="secondary er{$k}">
+				<volist name=":getcategory('son',$vo[catid])" id="in">
+	                                       <a href="{$in.url}">{$in.catname}</a>
+	                                 </volist>
+			</div>
+			</li>
+		</volist>
+
+	
+	</ul>
+</div>

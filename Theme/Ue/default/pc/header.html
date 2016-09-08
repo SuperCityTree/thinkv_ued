@@ -1,0 +1,13 @@
+<div class="header">
+	<div class="logo">
+		<a href="{:getconfig('cfg_indexurl')}"><img src="{$re_path}/images/logo.png"/></a>
+	</div>
+	<div class="search">
+		<form name="formsearch" action="{:U('Plus/search')}" method="GET">
+			<input type="hidden" name="kwtype" value="0"/>
+			<input name="key" type="text" class="sctxt" id="searchkey" />
+			<input type="submit" value="" class="scbt"/>
+		</form>
+	</div>
+	
+</div>

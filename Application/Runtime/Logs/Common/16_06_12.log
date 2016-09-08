@@ -1,0 +1,177 @@
+[ 2016-06-12T12:34:10+08:00 ] ::1 /thinkp/Theme/Ue/faq-template/theme.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+ERR: 无法加载模块:Theme
+
+[ 2016-06-12T12:39:53+08:00 ] ::1 /thinkp/Theme/Ue/faq-template/theme.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000653s ]
+ERR: 无法加载模块:Theme
+
+[ 2016-06-12T12:39:59+08:00 ] ::1 /thinkp/Theme/Ue/faq-template/theme.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000775s ]
+ERR: 无法加载模块:Theme
+
+[ 2016-06-12T12:45:45+08:00 ] ::1 /thinkp/css/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+ERR: 无法加载模块:Css
+
+[ 2016-06-12T12:45:45+08:00 ] ::1 /thinkp/css/reset.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000309s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001074s ]
+ERR: 无法加载模块:Css
+
+[ 2016-06-12T12:45:45+08:00 ] ::1 /thinkp/js/jquery.mobile.custom.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000796s ]
+ERR: 无法加载模块:Js
+
+[ 2016-06-12T12:45:45+08:00 ] ::1 /thinkp/js/modernizr.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+ERR: 无法加载模块:Js
+
+[ 2016-06-12T12:45:45+08:00 ] ::1 /thinkp/js/main.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+ERR: 无法加载模块:Js
+
+[ 2016-06-12T12:45:45+08:00 ] ::1 /thinkp/js/jquery-2.1.1.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+ERR: 无法加载模块:Js
+
+[ 2016-06-12T12:46:45+08:00 ] ::1 /thinkp/js/jquery-2.1.1.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000687s ]
+ERR: 无法加载模块:Js
+
+[ 2016-06-12T12:46:45+08:00 ] ::1 /thinkp/js/main.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001854s ]
+ERR: 无法加载模块:Js
+
+[ 2016-06-12T12:46:45+08:00 ] ::1 /thinkp/js/jquery.mobile.custom.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001211s ]
+ERR: 无法加载模块:Js
+
+[ 2016-06-12T14:25:12+08:00 ] ::1 /thinkp/www.baidu.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+ERR: 无法加载模块:Www.baidu
+
+[ 2016-06-12T16:52:28+08:00 ] ::1 /thinkp/%E6%89%93%E6%8A%98%E5%B9%85%E5%BA%A6%E3%80%81/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+ERR: 无法加载模块:打折幅度、
+
+[ 2016-06-12T16:55:27+08:00 ] ::1 /thinkp/%E6%89%93%E6%8A%98%E5%B9%85%E5%BA%A6%E3%80%81/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000765s ]
+ERR: 无法加载模块:打折幅度、
+
+[ 2016-06-12T16:55:28+08:00 ] ::1 /thinkp/%E6%89%93%E6%8A%98%E5%B9%85%E5%BA%A6%E3%80%81/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+ERR: 无法加载模块:打折幅度、
+
+[ 2016-06-12T16:55:29+08:00 ] ::1 /thinkp/%E6%89%93%E6%8A%98%E5%B9%85%E5%BA%A6%E3%80%81/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+ERR: 无法加载模块:打折幅度、
+
+[ 2016-06-12T16:55:30+08:00 ] ::1 /thinkp/%E6%89%93%E6%8A%98%E5%B9%85%E5%BA%A6%E3%80%81/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+ERR: 无法加载模块:打折幅度、
+
+[ 2016-06-12T16:56:25+08:00 ] ::1 /thinkp/ddd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+ERR: 无法加载模块:Ddd
+
+[ 2016-06-12T16:58:33+08:00 ] ::1 /thinkp/ddd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000125s ]
+ERR: 无法加载模块:Ddd
+
+[ 2016-06-12T16:58:33+08:00 ] ::1 /thinkp/ddd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000115s ]
+ERR: 无法加载模块:Ddd
+
+[ 2016-06-12T16:58:37+08:00 ] ::1 /thinkp/dddjhgk
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+ERR: 无法加载模块:Dddjhgk
+
+[ 2016-06-12T16:58:49+08:00 ] ::1 /thinkp/dddjhgk
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000827s ]
+ERR: 无法加载模块:Dddjhgk
+
+[ 2016-06-12T16:58:50+08:00 ] ::1 /thinkp/dddjhgk
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001327s ]
+ERR: 无法加载模块:Dddjhgk
+
+[ 2016-06-12T16:58:51+08:00 ] ::1 /thinkp/dddjhgk
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000699s ]
+ERR: 无法加载模块:Dddjhgk
+
+[ 2016-06-12T16:58:52+08:00 ] ::1 /thinkp/dddjhgk
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000964s ]
+ERR: 无法加载模块:Dddjhgk
+
+[ 2016-06-12T16:59:13+08:00 ] ::1 /thinkp/dddjhgk
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000989s ]
+ERR: 无法加载模块:Dddjhgk
+
+[ 2016-06-12T16:59:21+08:00 ] ::1 /thinkp/dddjhgk
+ERR: 无法加载模块:Dddjhgk
+
+[ 2016-06-12T16:59:39+08:00 ] ::1 /thinkp/ddd
+ERR: 无法加载模块:Ddd
+
+[ 2016-06-12T17:00:15+08:00 ] ::1 /thinkp/%E6%89%93%E6%8A%98%E5%B9%85%E5%BA%A6%E3%80%81/
+ERR: 无法加载模块:打折幅度、
+
+[ 2016-06-12T17:00:20+08:00 ] ::1 /thinkp/gg
+ERR: 无法加载模块:Gg
+
+[ 2016-06-12T17:00:30+08:00 ] ::1 /thinkp/ff;'
+ERR: 无法加载模块:Ff;'
+

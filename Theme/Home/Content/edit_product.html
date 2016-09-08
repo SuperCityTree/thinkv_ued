@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+<title>控制中心_{$cfg_webname}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/admin.css">
+<link rel="stylesheet" href="__PUBLIC__/admin/css/jquery.fileupload.css">
+<link rel="stylesheet" href="__PUBLIC__/admin/css/toolkit.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/weditor/css/wangEditor.min.css" />
+<link href="__PUBLIC__/admin/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+<script src="http://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- 拖拽插件 -->
+<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.dragsort-0.5.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+</head>
+<body>
+
+    <include file="Public:header"/>
+
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h3>编辑产品内容</h3>
+        <p>您可以在该栏目中添加文章内容等</p>
+      </div>
+    </div>
+
+
+
+    <div class="container bs-docs-container">
+
+
+
+              <div class="row">
+
+                        <div class="col-md-2 nav_left" role="complementary">
+                                       <!-- 引用内容管理通用左侧类目 -->
+                                <include file="Public:content_nav"/>
+                        </div>
+
+                         <div class="col-md-10" role="main">
+<form action="{:U('Content/edit_product')}" method="POST">
+		<div class="wenjian b">
+	                         
+				    <div class="row">
+      <div class="col-md-8">
+                           
+              <div class="form-group">
+                <label for="exampleInputEmail1">内容标题</label>
+                <input type="text" class="form-control" name='title' value="{$product.title}" placeholder="请输入文章标题" >
+              </div>
+               </div>
+               <div class="col-md-4">
+                           
+             <div class="form-group">
+                <label for="exampleInputEmail1">所属栏目</label>
+                     <select  name="catid" class="form-control"> 
+                        
+                              <notempty name="category_sonlist">
+                            <volist name="category_sonlist" id="vo">
+                              <if condition="$vo.catid eq $product[catid]">   
+                                    <option value="{$vo.catid}"  selected="selected">{$vo.catname}</option>
+                                    <else />
+                                    <option value="{$vo.catid}" >{$vo.catname}</option>
+                                    </if>
+                            </volist>
+                            <else/>
+                            <option value="{$catid}"  selected="selected">{:getcatname($catid)}</option>
+                            </notempty>
+                  </select>
+              </div>
+               </div>
+                </div>
+		</div>
+
+		<div class="wenjian b">
+		
+  		
+  		<div class="row">
+		  <div class="col-md-4">
+				 <div class="form-group">
+          <label for="exampleInputEmail1">文章封面</label><span class="pull-right text-info">建议尺寸：460*260px</span>
+                      <p>
+            
+<notempty name='product.thumb'>
+
+                                        <img src="{$product.thumb}" class="thumbnail litpic">
+                                        <else />
+                                        <img src="__PUBLIC__/admin/img/tub.png" class="thumbnail litpic">
+                                         </notempty>
+                                         </p>
+        
+        
+          
+            <p><a href="#" class="btn btn-success" data-toggle="modal" data-target="#gridSystemModal">上传封面图片</a></p>
+                      <if condition="$media.thumb neq 'null'">
+                                      
+            <input type="hidden" value="{$product.thumb}" name='thumb' id='thumb'>
+                                        <else />
+                                        
+
+            <input type="hidden" value="__PUBLIC__/admin/img/tub.png" name='thumb' id='thumb'>
+                                         </if>
+
+          
+        </div>
+		  </div>
+		      
+
+        <div class="col-md-8">
+              <div class="form-group">
+                <label for="exampleInputEmail1">产品价格</label>
+              <div class="input-group">
+                        <span class="input-group-addon">￥</span>
+                        <input type="text" class="form-control" name='price' aria-label="Amount (to the nearest dollar)" value='{$product.price}'>
+                      </div>
+              </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">产品推荐语</label>
+        <textarea class="form-control" rows="2" name='note'  placeholder="请输入产品推荐语" value='{$product.note}'>{$product.note}</textarea>
+      </div>
+              <div class="form-group">
+              <label for="exampleInputEmail1">产品购买链接</label>
+              <input type="text" class="form-control" name='buyurl'  placeholder="请输入产品购买链接" value="{$product.buyurl}">
+            </div>
+    </div>
+
+		</div>
+		      <div class="row">
+                        
+                         <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">文章关键字</label>
+                            <input type="text" class="form-control" name='keywords' id="exampleInputEmail1" value='{$product.keywords}' placeholder="请输入文章关键字">
+                          </div>
+                            <div class="form-group">
+                            <label for="exampleInputEmail1">文章描述</label>
+                            <textarea class="form-control" rows="3" name='description' >{$product.description}</textarea>
+                          </div>
+                        </div>
+
+                  </div>
+
+		        
+		      </div>
+          <div class="wenjian b">
+              <div class="form-group">
+                      <label for="exampleInputEmail1">资源上传区域</label>
+
+                            <div id="import-drop-target" class="bs-dropzone">
+                                <div class="import-header">
+                                   <span class="btn btn-success fileinput-button">
+                                      <i class="glyphicon glyphicon-plus"></i>
+                                      <span>上传新资源</span>
+                          
+                                      <input id="fileupload_meida" type="file" name="files[]" multiple="">
+                                  </span>
+                                </div>
+                              
+                                <p>点击上面的按钮，直接可以上传资源了，支持图片，视频，音乐文件上传</p>
+                                <hr>
+                                <p><strong class="pull-left">单个文件大小不要超过20MB</strong><a href="javascript:void(0)" class="addmiaoshu pull-right" style="display:block">给图片添加描述</a><a href="javascript:void(0)" class='paixu pull-right' style="padding-right: 20px" data='1'>开启排序</a></p>
+                          
+                                <div class="clear-fix"></div>
+                            
+
+                                <div id="progress_media" class="progress"f>
+                                    <div class="progress-bar progress-bar-success"></div>
+                                </div>
+
+                                <div  class="files">
+                                <ul id="files_media">
+                                 
+                                 <volist name="imglist" id="vo">
+                                   <if condition="$vo['add'] eq 1"> 
+                                              <li><a target="_blank" href="{$vo.link}" class="updone"><div class="mediaimg" style="  background-image: url('{$vo.link}');"></div><a href="javascript:void(0)" class='updelete'>删除</a><span>{$vo.name}</span><input type="hidden" name="filetype[]" value="{$vo.type}"><input type="hidden" name="fileadd[]" value="1"><textarea name="filename[]" class="miaoshu" value="{$vo.name}">{$vo.name}</textarea><input type="hidden" name="filelink[]" value="{$vo.link}">
+                                              </li>
+                                  </if>  
+                                </volist>
+
+
+                                </ul>
+
+                                </div>
+                              </div>
+<div class="clear-fix"></div>
+   
+
+
+                              
+
+
+                    </div>
+  
+          </div>
+
+                <div class="wenjian b">
+      <textarea  placeholder="Balabala" autofocus name='option'   class='weditor' style="height:400px;max-height:2500px;">{$product.option}</textarea>
+          </div>
+
+		      <div class="wenjian b">
+
+			  <textarea  placeholder="Balabala" autofocus name='content'   class='weditor' style="height:400px;max-height:2500px;">{$product.content}</textarea>
+
+		      </div>
+             <div class="wenjian b">
+
+                 <div class="form-group">
+                  <div class="col-sm-9">
+                    <div class="checkbox">
+               
+                       <div class="checkbox">
+                         <if condition="$product.posids eq '1'">
+                      <label>
+                        <input type="checkbox" name='posids[]' value="1" checked="checked"> 推荐到首页
+                      </label>
+                      <label><input type="checkbox" name='posids[]' value="2"> 推荐到本栏目</label>
+                         </if>
+                           <if condition="$product.posids eq '2'">
+                      <label>
+                        <input type="checkbox" name='posids[]' value="1" > 推荐到首页
+                      </label>
+                      <label><input type="checkbox" name='posids[]' value="2" checked="checked"> 推荐到本栏目</label>
+                         </if>
+                         <if condition="$product.posids eq '3'">
+                      <label>
+                        <input type="checkbox" name='posids[]' value="1" checked="checked"> 推荐到首页
+                      </label>
+                      <label><input type="checkbox" name='posids[]' value="2" checked="checked"> 推荐到本栏目</label>
+                         </if>
+                         <if condition="$product.posids eq '0'">
+                      <label>
+                        <input type="checkbox" name='posids[]' value="1" > 推荐到首页
+                      </label>
+                      <label><input type="checkbox" name='posids[]' value="2"> 推荐到本栏目</label>
+                         </if>
+                    </div>
+                 
+
+                    </div>
+                  </div>
+
+
+
+
+
+                </div>
+
+                <div class="row showqi" style="display:block">
+                    <div class="col-sm-4">
+                             <div class="form-group">
+                                      <label for="message-text" class="control-label">发布时间:</label>
+                                      <input class="form-control form_datetime"   name='inputtime' placeholder="请填写发布时间" value="{$product.updatetime}">
+                            </div>
+                        </div>
+                          <div class="col-sm-4">
+                             <div class="form-group">
+                                      <label for="message-text" class="control-label">排序:</label>
+                                      <input class="form-control"    name='listorder' placeholder="请填写排序顺序" value="{$product.listorder}">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                             <div class="form-group">
+                                      <label for="message-text" class="control-label">跳转链接:</label>
+                                      <input class="form-control"   name='url' placeholder="请填写要跳转到的站外链接" value="{$product.url}">
+                            </div>
+                  </div>
+
+                    <div class="notes">
+                      <ol>
+                        <li>发布时间不需要填写，系统会自动获取当前时间，如果填写，将按照您填写的时间进行显示</li>
+                        <li>默认排序按照发布时间进行排序，如果填写排序，则填写的值越小，越排在前面</li>
+                        <li>如果该篇文章需要直接跳转，请填写，如不需要，则不要填写。格式示例:http://cheerue.com/</li>
+                        </ol>
+                      </div>
+ 
+                        </div>   
+
+          </div>
+		      
+		       <input type="hidden" value="1" name='dopost'></input>
+              <input type="hidden" value="{$product.id}" name='id'></input>
+		      <div class="wenjian b">
+		      	<button type="submit" class="btn btn-warning btn-lg btn-block">提交</button>
+
+		      </div>
+                       
+ 			
+                            	
+                         </form>
+                           
+                    	</div>
+            
+
+    
+
+        </div>
+        
+        
+        
+      </div>
+    </div>
+
+
+
+</div><!-- /.modal -->
+
+
+
+
+
+<script type="text/javascript" src="__PUBLIC__/admin/weditor/js/wangEditor.min.js"></script>
+<script type="text/javascript">
+
+  
+                                                $('.weditor').each(function(){
+                                                   var textarea = $(this);
+                                                  // 生成编辑器
+                                                  var editor = new wangEditor(textarea);
+                                                   // 上传图片（举例）
+                                                  editor.config.uploadImgUrl = '{:U('Content/uploadimgfromeditor_w')}';
+
+                                                  // 配置自定义参数（举例）
+                                                  editor.config.uploadParams = {
+                                                      token: 'abcdefg',
+                                                      user: 'wangfupeng1988'
+                                                  };
+
+                                                  // 设置 headers（举例）
+                                                  editor.config.uploadHeaders = {
+                                                      'Accept' : 'text/x-json'
+                                                  };
+
+                                                  editor.create();
+                                                })
+</script>
+ <include file="Public:upimg"/>
+   <include file="Public:footer"/>
+
+
+<script type="text/javascript">
+  //资料上传
+  $(function () {
+    'use strict';
+    // Change this to the location of your server-side upload handler:
+    var url = '{:U('Content/uploadimg')}',
+        uploadButton = $('<a/>')
+            .addClass('btn btn-primary')
+            .prop('disabled', true)
+            .text('上传中...')
+            .on('click', function () {
+                var $this = $(this),
+                    data = $this.data();
+                $this
+                    .off('click')
+                    .text('取消')
+                    .on('click', function () {
+                        $this.remove();
+                        data.abort();
+                    });
+                data.submit().always(function () {
+                    $this.remove();
+                });
+            });
+            
+    $('#fileupload_meida').fileupload({
+        url: url,
+        dataType: 'json',
+        autoUpload: false,
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png|mp4|flv|mov|f4v|)$/i,
+        maxFileSize: 1524288800,
+        // Enable image resizing, except for Android and Opera,
+        // which actually support image resizing, but fail to
+        // send Blob objects via XHR requests:
+        disableImageResize: /Android(?!.*Chrome)|Opera/
+            .test(window.navigator.userAgent),
+        previewMaxWidth: 250,
+        previewMaxHeight: 250,
+        previewCrop: true
+    }).on('fileuploadadd', function (e, data) {
+
+        data.context = $('<li/>').appendTo('#files_media');
+        $.each(data.files, function (index, file) {
+            var node = $('<div/>')
+                    .append($('<span/>').text(file.name));
+                   
+
+            if (!index) {
+                node
+                    .append(uploadButton.clone(true).data(data));
+            }
+            node.appendTo(data.context);
+        
+        });
+    }).on('fileuploadprocessalways', function (e, data) {
+        var index = data.index,
+            file = data.files[index],
+            node = $(data.context.children()[index]);
+        if (file.preview) {
+            node
+                .prepend(file.preview);
+        }
+        if (file.error) {
+            node
+                .append($('<span class="text-danger"/>').text(file.error));
+        }
+        if (index + 1 === data.files.length) {
+            data.context.find('a')
+                .text('上传文件')
+                .prop('disabled', !!data.files.error);
+        }
+    }).on('fileuploadprogressall', function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#progress_media .progress-bar').css(
+            'width',
+            progress + '%'
+        );
+    }).on('fileuploaddone', function (e, data) {
+
+
+       
+        $.each(data.result.files, function (index, file) {
+        
+                    //console.log(file.url);
+            if (file.url) {
+                var link = $('<a>')
+                    .attr('target', '_blank')
+                    .prop('href', file.url).addClass("updone");
+                $(data.context.children()[index])
+                    .wrap(link);
+                    var orgname=$(data.context.children()[index]).find("span").html();
+                    var flielink_input="<input type='hidden' name='filelink[]' value="+file.url+">";
+                    var fliename_input="<textarea name='filename[]' class='miaoshu' value="+orgname+">"+orgname+"</textarea>";
+                    var flietype_input="<input type='hidden' name='filetype[]' value="+file.type+">";
+                    var flieadd_input="<input type='hidden' name='fileadd[]' value='1'>";
+                    var deleteimg="<a href='javascript:void(0)' class='updelete' data="+file.name+">删除</a>";
+                   $(flielink_input).insertAfter(data.context.children()[index]);
+                    $(fliename_input).insertAfter(data.context.children()[index]);
+                     $(flietype_input).insertAfter(data.context.children()[index]);
+                      $(flieadd_input).insertAfter(data.context.children()[index]);
+                       $(deleteimg).insertAfter(data.context.children()[index]);
+
+                     $(".addmiaoshu").show()
+                 
+            } else if (file.error) {
+                var error = $('<span class="text-danger"/>').text(file.error);
+                $(data.context.children()[index])
+                    .append('<br>')
+                    .append(error);
+            }
+        });
+        return false;
+    }).on('fileuploadfail', function (e, data) {
+     
+        $.each(data.files, function (index) {
+            var error = $('<span class="text-danger"/>').text('File upload failed.');
+            $(data.context.children()[index])
+                .append('<br>')
+                .append(error);
+        });
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+});
+
+//给图片添加描述
+$('.addmiaoshu').on('click',function(){
+
+  $('.miaoshu').show().addClass('form-control');
+  $('#files_media').gridly('draggable', 'off').removeClass('dargable');
+  return false;
+
+})
+
+
+//删除图片
+$('body').on('click','.updelete',function(){
+
+
+  var link=$(this).attr('data');
+  $(this).parent('li').remove();
+
+      $.post('{:U('Content/delete_media_img')}',{'name':link},function(data){
+       consloe.log(data);
+      });
+       
+ 
+      return false;
+
+})
+
+$('.paixu').click(function(){
+  if($(this).attr('data')=='1'){
+    $("#files_media").dragsort({ dragSelector: "li", dragBetween: true });
+    $(this).attr('data','2').html('关闭排序');
+    $('.updelete').hide();
+  }
+  else{
+    $("#files_media").dragsort("destroy");
+    $(this).attr('data','1').html('开启排序');
+    $('.updelete').show();
+  }
+})
+
+    
+    
+
+//添加一条网址资源
+$('.addone').click(function(){
+  var row=$(this).parent().prev('.row');
+
+  row.after(row.clone());
+  /* $('.addone').insertBefore(row);*/
+
+})
+
+$('.zjwz').click(function(){
+    $('.showzj').slideToggle();
+})
+
+
+//删除图片
+$('body').on('click','.deleteweb',function(){
+
+   var rownum=$('.weblist').length;
+ 
+    var toprow=$(this).parent('.row');
+    if( rownum>1){
+        toprow.remove();
+    }else{
+         toprow.find('input').val('');
+         toprow.find('select').val('');
+    }
+    $('.fileadd').val(2);
+    return false;
+
+})
+
+//生成时间
+        $('.form_datetime').datetimepicker({
+      language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      forceParse: 0,
+          showMeridian: 1
+    });
+
+        $('.next_open').click(function(){
+            $('.showqi').slideToggle();
+        })
+</script>
+</body>
+
+</html>

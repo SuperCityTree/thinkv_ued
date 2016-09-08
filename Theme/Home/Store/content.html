@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>控制中心_{$cfg_webname}</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/admin.css">
+
+</head>
+<body>
+    <include file="Public:header_store"/>
+
+    <div class="bs-docs-header" id="content" tabindex="-1">
+        <div class="container">
+            <h3>内容管理</h3>
+            <p>您可以在本栏目内自由的管理您的网站内容</p>
+        </div>
+    </div>
+    <div class="container bs-docs-container">
+      
+            <div class="col-md-12" role="main">
+                <div class="row ">
+                    <div class="btn-group btn-group-justified " role="group" aria-label="Justified button group">
+                        <volist name="category_sonlist" id="vo">
+                            <if condition="$vo.catid eq $catid">
+                                <a href="__APP__/Home/Store/content/id/{$vo.catid}/aid/{$aid}" class="btn btn-default active" role="button">{$vo.catname}</a>
+                                <else/>
+                                <a href="__APP__/Home/Store/content/id/{$vo.catid}/aid/{$aid}" class="btn btn-default" role="button">{$vo.catname}</a>
+                            </if>
+                        </volist>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>文件名称</th>
+                            <th>所属栏目</th>
+                            <th>操作</th>
+                        </tr>
+                        <volist name="list" id="vo">
+                        <tr>
+                            <td>{$vo.title}</td>
+                            <td>{$vo.catid|getcatname}</td>
+                            <td>
+                                <a class="btn btn-success" href="{:U('Store/newedit?id='.$vo['id'])}">
+                                    <i class="glyphicon glyphicon-pencil"></i>编辑
+                                </a>
+                                <eq name="vo.catid" value="17">
+                                    <a class="btn btn-success" href="{:U('Store/picmaneger?id='.$vo['id'])}">
+                                        <i class="glyphicon glyphicon-pencil"></i>管理图集
+                                    </a>
+                                </eq>
+                                <a class="btn btn-danger" href="{:U('Store/del?id='.$vo['id'])}">
+                                    <i class="glyphicon glyphicon-trash"></i>删除
+                                </a>
+                            </td>
+                        </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+            <p> <a class="btn btn-success pull-right  mr20" href="__APP__/Home/Store/newadd/id/{$catid}/aid/{$aid}" role="button">上传资源</a></p>
+        </div>
+    </div>
+    <include file="Public:footer"/>
+</body>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</html>

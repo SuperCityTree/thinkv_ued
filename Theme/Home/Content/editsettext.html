@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+<title>控制中心_{$cfg_webname}</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/admin.css">
+<link rel="stylesheet" href="__PUBLIC__/admin/css/jquery.fileupload.css">
+<link rel="stylesheet" href="__PUBLIC__/admin/css/toolkit.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/editor/css/simditor.css" />
+
+</head>
+<body>
+
+    <include file="Public:header"/>
+
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h3>新增栏目设置</h3>
+        <p>您可以在该栏目中添加新的栏目设置内容</p>
+      </div>
+    </div>
+
+
+
+    <div class="container bs-docs-container">
+
+
+
+              <div class="row">
+
+                        <div class="col-md-2 nav_left" role="complementary">
+                            <!-- 引用内容管理通用左侧类目 -->
+                                <include file="Public:content_nav"/>
+                        </div>
+
+                         <div class="col-md-10" role="main">
+<form action="{:U('content/editset')}" method="POST">
+		
+
+		<div class="wenjian b">
+		
+  		
+  		<div class="row">
+	
+       
+
+		  <div class="col-md-12">
+        <div class="form-group">
+        <label for="recipient-name" class="control-label">所属栏目设置:</label>
+            <select  name="catid" class="form-control"> 
+                  <volist name="catlist" id="vo">
+                      <if condition="$vo.catid eq $cid">   
+                            
+                            <option value="{$vo.catid}"  selected="selected">{$vo.catname}</option>
+                            <else />
+                            <option value="{$vo.catid}" >{$vo.catname}</option>
+                            </if>
+                    </volist>
+          </select>
+        </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">设置标题</label>
+		    <input type="text" class="form-control" name='name' id="exampleInputEmail1" placeholder="请输入标题" value="{$info.name}">
+		  </div>
+              <div class="form-group">
+                  <label for="exampleInputEmail1">内容</label><label class="pull-right toeditor text-danger" date='1'>编辑器模式</label>
+                  <textarea name="text" class="form-control"  id='editor'>{$info.text}</textarea>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">链接</label>
+                  <input type="text" class="form-control" name='text_link' id="exampleInputEmail1" placeholder="请输入链接" value='{$info.link}'>
+                </div>
+                
+		       <if condition="getconfig('cfg_mode')=='Y'">
+                     <div class="form-group">
+                    <else/>
+                    <div class="form-group" style="display: none">
+                    </if>
+                <label for="exampleInputEmail1">调用符</label>
+                <input type="text" class="form-control" name='value' required="required"  id="exampleInputEmail1" placeholder="请输入调用符 英文字符" value="{$info.value}">
+              </div>
+		</div>
+		</div>
+		      
+
+		        
+		      </div>
+                    <input type="hidden" value="{$info.id}" name='id'></input>
+		       <input type="hidden" value="1" name='dopost'></input>
+                   <input type="hidden" value="text" name='type'></input>
+
+		      <div class="wenjian b">
+		      	<button type="submit" class="btn btn-warning btn-lg btn-block">提交</button>
+
+		      </div>
+                       
+ 			
+                            	
+                         </form>
+                           
+                    	</div>
+
+        </div>   
+      </div>
+    </div>
+
+
+<script src="http://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="__PUBLIC__/admin/editor/js/module.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/editor/js/hotkeys.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/editor/js/uploader.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/editor/js/simditor.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+$('.toeditor').click(function(){
+  if($(this).attr('date')=='1'){
+
+  toolbar = [ 'title', 'bold', 'italic', 'underline', 'strikethrough',
+      'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|',
+      'link', 'image', 'hr', '|', 'indent', 'outdent' ];
+    editor = new Simditor( {
+    textarea : $('#editor'),
+    placeholder : '这里输入内容...',
+    toolbar : toolbar,  //工具栏
+    defaultImage : 'simditor-2.0.1/images/image.png', //编辑器插入图片时使用的默认图片
+    upload : {
+        url : '{:U('Content/uploadimgfromeditor')}', //文件上传的接口地址
+        params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
+        fileKey: 'fileDataFileName', //服务器端获取文件数据的参数名
+        connectionCount: 3,
+        leaveConfirm: '正在上传文件'
+    } 
+
+  });
+  $(this).html("普通模式").attr('date','0')
+  }
+   else{
+    var text= $('#editor').html();
+
+      editor.destroy();
+      $('#editor').show().val(text);
+      $(this).html("编辑器模式").attr('date','1')
+    }
+})
+
+</script>
+  <include file="Public:footer"/>
+
+</body>
+
+</html>

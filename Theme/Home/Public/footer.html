@@ -1,0 +1,23 @@
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+
+    <p>Designed and built  by <a href="http://cheerue.com" target="_blank">Cheerue</a></p>
+ 
+    <p>如有问题，欢迎致电客服电话：010-57032682 </p>
+
+  </div>
+</footer>
+
+<script>
+$('.clearbtn').click(function(){
+if(confirm("确认要清除缓存？")){
+var $type=$('#type').val();
+var $mess=$('#mess');
+$.post('__URL__/clear',{type:$type},function(data){
+alert("缓存清理成功");
+});
+}else{
+return false;
+}
+});
+</script>

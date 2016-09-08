@@ -1,0 +1,268 @@
+[ 2016-07-01T08:43:58+08:00 ] ::1 /he/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001101s ]
+SQL: SHOW COLUMNS FROM `think_sysconfig` [ RunTime:0.0441s ]
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_theme' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_wap' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_category` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `think_category` WHERE ( parentid=0 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+NOTIC: [8] Use of undefined constant cfg_webname - assumed 'cfg_webname' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 9 行.
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_webname' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_indexurl' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant index_banner - assumed 'index_banner' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant img - assumed 'img' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 30 行.
+NOTIC: [2] Missing argument 3 for getcatlist(), called in E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php on line 30 and defined E:\www\he\Application\Ue\Common\function.php 第 319 行.
+SQL: SHOW COLUMNS FROM `think_catset_list` [ RunTime:0.0410s ]
+NOTIC: [8] Undefined variable: catid E:\www\he\Application\Ue\Common\function.php 第 322 行.
+NOTIC: [8] Undefined index: parentid E:\www\he\Application\Ue\Common\function.php 第 324 行.
+SQL: SELECT * FROM `think_catset_list` WHERE ( value='index_banner'AND catid = '0' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_indexurl' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 2 for getcategory(), called in E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php on line 38 and defined E:\www\he\Application\Ue\Common\function.php 第 72 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=0 ) ORDER BY listorder  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=72 ) ORDER BY listorder  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=73 ) ORDER BY listorder  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=74 ) ORDER BY listorder  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=75 ) ORDER BY listorder  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=76 ) ORDER BY listorder  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=77 ) ORDER BY listorder  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=78 ) ORDER BY listorder  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=79 ) ORDER BY listorder  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+SQL: SELECT * FROM `think_category` WHERE ( catid=81 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `think_news` [ RunTime:0.0348s ]
+SQL: SELECT * FROM `think_news` WHERE ( `catid` = 81 ) ORDER BY listorder,updatetime desc LIMIT 2   [ RunTime:0.0238s ]
+SQL: SELECT * FROM `think_category` WHERE ( catid=80 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `think_page` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `think_page` WHERE ( `catid` = 80 ) ORDER BY listorder,updatetime desc LIMIT 1   [ RunTime:0.0201s ]
+NOTIC: [8] Use of undefined constant cfg_powerby - assumed 'cfg_powerby' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 87 行.
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_powerby' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant weibo - assumed 'weibo' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 90 行.
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='weibo' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant tencent - assumed 'tencent' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 91 行.
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='tencent' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.236273s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.236371s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000907s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001014s ]
+
+[ 2016-07-01T08:43:59+08:00 ] ::1 /he/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+SQL: SHOW COLUMNS FROM `think_sysconfig` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_theme' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_wap' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_category` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `think_category` WHERE ( parentid=0 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8] Use of undefined constant cfg_webname - assumed 'cfg_webname' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 9 行.
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_webname' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_indexurl' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant index_banner - assumed 'index_banner' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 30 行.
+NOTIC: [8] Use of undefined constant img - assumed 'img' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 30 行.
+NOTIC: [2] Missing argument 3 for getcatlist(), called in E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php on line 30 and defined E:\www\he\Application\Ue\Common\function.php 第 319 行.
+SQL: SHOW COLUMNS FROM `think_catset_list` [ RunTime:0.0052s ]
+NOTIC: [8] Undefined variable: catid E:\www\he\Application\Ue\Common\function.php 第 322 行.
+NOTIC: [8] Undefined index: parentid E:\www\he\Application\Ue\Common\function.php 第 324 行.
+SQL: SELECT * FROM `think_catset_list` WHERE ( value='index_banner'AND catid = '0' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_indexurl' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 2 for getcategory(), called in E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php on line 38 and defined E:\www\he\Application\Ue\Common\function.php 第 72 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=0 ) ORDER BY listorder  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=72 ) ORDER BY listorder  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=73 ) ORDER BY listorder  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=74 ) ORDER BY listorder  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=75 ) ORDER BY listorder  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=76 ) ORDER BY listorder  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=77 ) ORDER BY listorder  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=78 ) ORDER BY listorder  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Use of undefined constant catid - assumed 'catid' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 41 行.
+SQL: SELECT * FROM `think_category` WHERE ( parentid=79 ) ORDER BY listorder  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: catinfos E:\www\he\Application\Ue\Common\function.php 第 115 行.
+NOTIC: [8] Undefined variable: catinfot E:\www\he\Application\Ue\Common\function.php 第 115 行.
+SQL: SELECT * FROM `think_category` WHERE ( catid=81 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `think_news` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `think_news` WHERE ( `catid` = 81 ) ORDER BY listorder,updatetime desc LIMIT 2   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `think_category` WHERE ( catid=80 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_page` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `think_page` WHERE ( `catid` = 80 ) ORDER BY listorder,updatetime desc LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant cfg_powerby - assumed 'cfg_powerby' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 87 行.
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='cfg_powerby' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant weibo - assumed 'weibo' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 90 行.
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='weibo' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant tencent - assumed 'tencent' E:\www\he\Application\Runtime\Cache\Ue\808813c6a855567b62439811c82f00f8.php 第 91 行.
+SQL: SELECT * FROM `think_sysconfig` WHERE ( varname='tencent' ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054913s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054990s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000910s ]
+
